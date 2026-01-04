@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -6,32 +6,108 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Projects = () => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [selectedProject, setSelectedProject] = useState<any>(null);
 
     const projects = [
         {
-            title: 'University Capstone',
-            category: 'Academic Project',
-            description: 'A comprehensive management system built for my final year project. Features complex data handling and role-based access.',
-            tags: ['React', 'Node.js', 'PostgreSQL'],
-            color: 'from-pink-500 to-rose-500',
-            image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80'
+            title: 'AI Learning Assistant',
+            category: 'Full-stack Web App',
+            description: 'A comprehensive LMS with role-based access (Admin, Teacher, Student) and AI-powered tutoring. Features JWT auth, Redis session management, and automated quiz generation.',
+            details: 'Deep dive: This project solves the problem of personalized learning. I utilized OpenAI API to generate quizzes based on course content. The backend handles heavy traffic with Redis caching.',
+            tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Docker', 'AI'],
+            color: 'from-blue-500 to-indigo-600',
+            image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
+            github: 'https://github.com/dt-u/AILearningAssistant',
+            demoLink: null // Popup
+        },
+        {
+            title: 'Spring Boot Enterprise App',
+            category: 'Backend Architecture',
+            description: 'Secure web application using Spring Boot and Spring Data JPA. Implemented Spring Security for auth and Thymeleaf for server-side rendering.',
+            details: 'Focused on security and scalability. Implemented role-based access control (RBAC) and complex database relationships using Hibernate.',
+            tags: ['Java', 'Spring Boot', 'MySQL', 'Thymeleaf', 'Security'],
+            color: 'from-green-500 to-emerald-600',
+            image: 'https://images.unsplash.com/photo-1623479322729-28b25c16b011?w=800&q=80',
+            github: 'https://github.com/dt-u/se2midterm',
+            demoLink: null // Popup
         },
         {
             title: 'Personal Portfolio',
             category: 'Design & Dev',
-            description: 'You are looking at it! Built from scratch to showcase my skills in animations and component architecture.',
-            tags: ['React', 'GSAP', 'Tailwind'],
-            color: 'from-blue-500 to-cyan-500',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80'
+            description: 'Modern, high-performance portfolio website to showcase technical skills. Optimized build performance using Vite and implemented Tailwind CSS for responsive UI.',
+            details: 'Built with performance in mind. Uses GSAP for smooth animations without layout thrashing. Fully responsive and accessible.',
+            tags: ['React', 'TypeScript', 'Tailwind', 'Vite'],
+            color: 'from-violet-500 to-purple-600',
+            image: 'https://images.unsplash.com/photo-1545665277-5937bf0449ec?w=800&q=80',
+            github: 'https://github.com/dt-u/my-portfolio',
+            demoLink: 'https://my-portfolio-five-kappa-4lr6s8l5ge.vercel.app/' // Link to Web
         },
         {
-            title: 'Coursework App',
-            category: 'Mobile Hybrid',
-            description: 'A cross-platform mobile application developed during my mobile development course at HANU.',
-            tags: ['React Native', 'Firebase'],
-            color: 'from-violet-500 to-purple-500',
-            image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80'
+            title: 'Internal Email Simulation',
+            category: 'Backend Logic',
+            description: 'Functional web-based email client simulation. Handled file uploads, attachment processing, and implemented server-side rendering using EJS.',
+            details: 'Simulates a real SMTP server environment. Handles multipart form data for attachments and stores email states in MySQL.',
+            tags: ['Node.js', 'EJS', 'MySQL', 'Backend'],
+            color: 'from-orange-400 to-red-500',
+            image: 'https://images.unsplash.com/photo-1557200130-4b2251506711?w=800&q=80',
+            github: 'https://github.com/dt-u/email-system',
+            demoLink: null // Popup
         },
+        {
+            title: 'Recipe Management App',
+            category: 'Interactive UI',
+            description: 'Interactive recipe discovery platform. Integrated third-party APIs to fetch culinary data and utilized React Router for seamless navigation.',
+            details: 'A React SPA that manages complex state for recipe filtering and favorites. Uses Axios for efficient API data fetching.',
+            tags: ['React', 'Bootstrap', 'RESTful API', 'Node.js'],
+            color: 'from-yellow-400 to-orange-500',
+            image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=800&q=80',
+            github: 'https://github.com/dt-u/recipe_app',
+            demoLink: null // Popup
+        },
+        {
+            title: 'Weather Dashboard',
+            category: 'Data Visualization',
+            description: 'Real-time weather application using Leaflet Maps to visualize weather patterns and location data geographically.',
+            details: 'Integrates OpenWeatherMap API with Leaflet.js. Challenges involved handling asynchronous data updates on the map overlay.',
+            tags: ['React', 'Leaflet', 'Bootstrap', 'API'],
+            color: 'from-cyan-400 to-blue-500',
+            image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80',
+            github: 'https://github.com/dt-u/weatherapp',
+            demoLink: 'https://weatherapp-kappa-ruby.vercel.app/'
+        },
+        {
+            title: 'Environmental Awareness',
+            category: 'Static Web Design',
+            description: 'Designed "Green Web", an educational website featuring news, donation, and shopping sections with responsive layout.',
+            details: 'A focus on semantic HTML5 and CSS3 Grid/Flexbox layouts. Optimized for all device sizes without frameworks.',
+            tags: ['HTML5', 'CSS3', 'Responsive Design'],
+            color: 'from-lime-400 to-green-500',
+            image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80',
+            github: 'https://github.com/dt-u/web-Xanh',
+            demoLink: 'https://web-xanh.vercel.app/'
+        },
+        {
+            title: 'Cam Trà Nhà Tớ',
+            category: 'E-commerce (Collaborator)',
+            description: 'Customized WordPress/WooCommerce theme for a retail brand. Optimized images and scripts for better page load speed and SEO.',
+            details: 'Collaborated with a team to customize PHP templates in WordPress. Managed WooCommerce product variations and shipping classes.',
+            tags: ['WordPress', 'WooCommerce', 'CSS', 'HTML'],
+            color: 'from-pink-400 to-rose-500',
+            image: 'https://images.unsplash.com/photo-1472851294608-415522f96319?w=800&q=80',
+            github: 'https://github.com/dt-u/cam-tra-nha-to',
+            demoLink: null // Popup
+        },
+        {
+            title: 'React UI Experiments',
+            category: 'Self-Study',
+            description: 'Collection of high-performance UI components like Splash Cursor, Magic Bento Grid, and Falling Text using pure CSS3 and React Hooks.',
+            details: 'A playground for advanced React patterns and math-heavy CSS animations. Features custom hooks for mouse tracking and physics simulations.',
+            tags: ['React', 'Animations', 'UI/UX', 'CSS3'],
+            color: 'from-fuchsia-500 to-purple-600',
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
+            github: 'https://github.com/dt-u/react-ui-experiments',
+            demoLink: null // Popup
+        }
     ];
 
     useEffect(() => {
@@ -54,6 +130,15 @@ export const Projects = () => {
         return () => ctx.revert();
     }, []);
 
+    // Prevent body scroll when modal is open
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [selectedProject]);
+
     return (
         <section id="projects" className="py-32 bg-[#0f172a] relative">
             <div className="container mx-auto px-6" ref={containerRef}>
@@ -65,23 +150,49 @@ export const Projects = () => {
 
                 <div className="flex flex-col gap-20">
                     {projects.map((project, index) => (
-                        <div 
-                            key={index} 
+                        <div
+                            key={index}
                             className={`project-row flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 items-center`}
                         >
                             {/* Image Side */}
                             <div className="w-full md:w-3/5 group perspective-1000">
                                 <div className="relative rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-700 hover:rotate-x-2 hover:rotate-y-2 preserve-3d">
                                     <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 group-hover:opacity-0 transition-opacity duration-500 z-10`}></div>
-                                    <img 
-                                        src={project.image} 
+                                    <img
+                                        src={project.image}
                                         alt={project.title}
                                         className="w-full h-[400px] object-cover transform transition-transform duration-700 group-hover:scale-110"
                                     />
                                     {/* Overlay Content */}
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4 backdrop-blur-sm z-20">
-                                        <button className="px-6 py-3 bg-white text-black rounded-full font-bold hover:scale-110 transition-transform">View Details</button>
-                                        <button className="px-6 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-black transition-all">Github</button>
+
+                                        {/* Logic for Buttons */}
+                                        {project.demoLink ? (
+                                            <a
+                                                href={project.demoLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="px-6 py-3 bg-white text-black rounded-full font-bold hover:scale-110 transition-transform cursor-pointer"
+                                            >
+                                                Live Demo
+                                            </a>
+                                        ) : (
+                                            <button
+                                                onClick={() => setSelectedProject(project)}
+                                                className="px-6 py-3 bg-white text-black rounded-full font-bold hover:scale-110 transition-transform cursor-pointer"
+                                            >
+                                                View Details
+                                            </button>
+                                        )}
+
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-6 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-black transition-all"
+                                        >
+                                            Github
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -108,6 +219,117 @@ export const Projects = () => {
                     ))}
                 </div>
             </div>
+
+            {/* PROJECT DETAIL MODAL */}
+            {selectedProject && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                    {/* Backdrop */}
+                    <div
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+                        onClick={() => setSelectedProject(null)}
+                    ></div>
+
+                    {/* Modal Content */}
+                    <div className="relative bg-[#151c2f] border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl z-50 animate-fade-in-up">
+                        <button
+                            onClick={() => setSelectedProject(null)}
+                            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-50"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+
+                        <div className="h-64 md:h-80 w-full relative overflow-hidden">
+                            <div className={`absolute inset-0 bg-gradient-to-br ${selectedProject.color} opacity-40`}></div>
+                            <img
+                                src={selectedProject.image}
+                                alt={selectedProject.title}
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#151c2f] to-transparent">
+                                <span className="px-3 py-1 bg-indigo-600 rounded-full text-xs font-bold text-white uppercase tracking-wider mb-2 inline-block">
+                                    {selectedProject.category}
+                                </span>
+                                <h2 className="text-4xl md:text-5xl font-bold text-white shadow-black drop-shadow-lg">
+                                    {selectedProject.title}
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div className="p-8 md:p-10">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div className="md:col-span-2 space-y-6">
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white mb-3">Project Overview</h3>
+                                        <p className="text-gray-300 leading-relaxed text-lg">
+                                            {selectedProject.description}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white mb-3">Technical Details</h3>
+                                        <p className="text-gray-300 leading-relaxed">
+                                            {selectedProject.details || "More detailed technical specifications and challenges overcome during this project will be updated here. This section allows for a deeper dive into the architecture and code structure."}
+                                        </p>
+                                    </div>
+
+                                    {/* Placeholder Gallery */}
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white mb-4">Project Gallery</h3>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div className="rounded-xl overflow-hidden h-40 border border-white/10 group">
+                                                <img
+                                                    src={`https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&q=80`}
+                                                    alt="Project Screenshot 1"
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                />
+                                            </div>
+                                            <div className="rounded-xl overflow-hidden h-40 border border-white/10 group">
+                                                <img
+                                                    src={`https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80`}
+                                                    alt="Project Screenshot 2"
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                />
+                                            </div>
+                                            <div className="rounded-xl overflow-hidden h-40 border border-white/10 group sm:col-span-2">
+                                                <img
+                                                    src={`https://images.unsplash.com/photo-1607799275518-d58665d099db?w=800&q=80`}
+                                                    alt="Project Screenshot 3"
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 h-fit">
+                                    <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Technologies</h4>
+                                    <div className="flex flex-wrap gap-2 mb-8">
+                                        {selectedProject.tags.map((tag: string) => (
+                                            <span key={tag} className="px-3 py-1 rounded bg-indigo-500/20 text-indigo-300 text-sm border border-indigo-500/30">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Resources</h4>
+                                    <div className="flex flex-col gap-3">
+                                        <a
+                                            href={selectedProject.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-3 text-white hover:text-indigo-400 transition-colors group"
+                                        >
+                                            <span className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
+                                            </span>
+                                            View Source Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };

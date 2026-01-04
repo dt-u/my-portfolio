@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 export const Hero = () => {
     const textRef = useRef<HTMLSpanElement>(null);
     const [textIndex, setTextIndex] = useState(0);
-    const roles = ["Senior Student @ HANU", "Aspiring Web Developer", "Frontend Enthusiast", "Creative Coder"];
+    const roles = ["Aspiring Web Developer", "IT Student @ HANU", "Frontend Enthusiast", "Creative Coder"];
     
     // Typing effect logic
     useEffect(() => {
@@ -39,13 +39,13 @@ export const Hero = () => {
             <div className="container mx-auto px-6 z-10 relative">
                 <div className="flex flex-col items-center text-center">
                     <div className="inline-block px-4 py-2 mb-6 rounded-full border border-indigo-500/30 bg-indigo-500/10 backdrop-blur-md animate-fade-in-down">
-                        <span className="text-indigo-300 font-medium tracking-wide text-sm uppercase">Ready to launch my career</span>
+                        <span className="text-indigo-300 font-medium tracking-wide text-sm uppercase">Open to Internship Opportunities</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tight leading-tight">
                         Hi, I'm <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-x bg-[length:200%_auto]">
-                            [Your Name]
+                            Dam Tu Uyen
                         </span>
                     </h1>
 
@@ -57,7 +57,7 @@ export const Hero = () => {
 
                     <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
                         Final-year IT student at <strong className="text-indigo-400">Hanoi University (HANU)</strong>. 
-                        Translating academic knowledge into modern, interactive web experiences.
+                        Passionate about creating interactive, user-centric interfaces and solid backend systems.
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-6 mt-2">
@@ -72,18 +72,13 @@ export const Hero = () => {
                             </span>
                         </a>
                         
-                        <a
-                            href="#contact"
-                            className="px-8 py-4 rounded-full font-bold text-white border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all hover:scale-105"
-                        >
-                            Hire Me
-                        </a>
+                        {/* Removed Hire Me button as requested */}
                     </div>
                 </div>
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
                 <div className="w-[30px] h-[50px] rounded-full border-2 border-white/30 flex justify-center p-2">
                     <div className="w-1 h-3 bg-white/50 rounded-full animate-scroll-down"></div>
                 </div>

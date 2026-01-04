@@ -4,17 +4,24 @@ export const Header = () => {
             <div className="max-w-7xl mx-auto">
                 <nav className="bg-white/10 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 flex justify-between items-center shadow-lg shadow-black/5">
                     <a href="#" className="text-2xl font-black text-white tracking-tighter hover:text-indigo-400 transition-colors">
-                        PORTFOLIO<span className="text-indigo-500">.</span>
+                        DTU<span className="text-indigo-500">.</span>
                     </a>
 
                     <div className="hidden md:flex space-x-1">
-                        {['Home', 'About', 'Journey', 'Skills', 'Projects', 'Contact'].map((item) => (
+                        {[
+                            { name: 'Home', link: '#home' },
+                            { name: 'About', link: '#about' },
+                            { name: 'Education', link: '#education' },
+                            { name: 'Skills', link: '#skills' },
+                            { name: 'Projects', link: '#projects' },
+                            { name: 'Contact', link: '#contact' }
+                        ].map((item) => (
                             <a
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
+                                key={item.name}
+                                href={item.link}
                                 className="px-5 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300"
                             >
-                                {item}
+                                {item.name}
                             </a>
                         ))}
                     </div>

@@ -6,10 +6,11 @@ import './App.css';
 // Components
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { PersonalInfo } from './components/PersonalInfo';
 import { About } from './components/About';
-import { Timeline } from './components/Timeline';
+import { Education } from './components/Education';
 import { Skills } from './components/Skills';
-import { Certifications } from './components/Certifications';
+import { SoftSkills } from './components/SoftSkills';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -52,10 +53,11 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <PersonalInfo />
         <About />
-        <Timeline />
+        <Education />
         <Skills />
-        <Certifications />
+        <SoftSkills />
         <Projects />
         <Contact />
       </main>

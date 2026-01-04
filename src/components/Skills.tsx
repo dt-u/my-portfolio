@@ -8,32 +8,37 @@ export const Skills = () => {
         {
             title: "Frontend",
             icon: "💻",
-            skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Three.js", "GSAP"]
+            skills: ["JavaScript (ES6+)", "TypeScript", "React.js", "Tailwind CSS", "Bootstrap", "HTML5/CSS3"]
         },
         {
-            title: "Backend",
+            title: "Backend & DB",
             icon: "⚙️",
-            skills: ["Node.js", "Express", "Python", "PostgreSQL", "Redis", "GraphQL"]
+            skills: ["Node.js", "Express.js", "Spring Boot", "Java", "PHP", "MySQL", "MongoDB"]
         },
         {
-            title: "Tools & DevOps",
+            title: "Tools & Others",
             icon: "🛠️",
-            skills: ["Git", "Docker", "AWS", "Figma", "Jest", "CI/CD"]
+            skills: ["Git/GitHub", "Docker", "Postman", "RESTful APIs", "WordPress/WooCommerce", "AI Assistants"]
         }
     ];
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from(".skill-card", {
-                y: 100,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 80%",
+            gsap.fromTo(".skill-card", 
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
                 }
-            });
+            );
         }, containerRef);
 
         return () => ctx.revert();
