@@ -56,8 +56,8 @@ export const Projects = () => {
         {
             title: 'Recipe Management App',
             category: 'Interactive UI',
-            description: 'Interactive recipe discovery platform. Integrated third-party APIs to fetch culinary data and utilized React Router for seamless navigation.',
-            details: 'A React SPA that manages complex state for recipe filtering and favorites. Uses Axios for efficient API data fetching.',
+            description: 'Interactive recipe discovery platform. Developed a custom RESTful API to manage and serve recipe data asynchronously to the frontend.',
+            details: 'Designed and implemented a custom backend API using Node.js and Express to handle CRUD operations for recipes, user authentication, and social features. The frontend interacts seamlessly with this bespoke server to provide a real-time discovery experience.',
             tags: ['React', 'Bootstrap', 'RESTful API', 'Node.js'],
             color: 'from-yellow-400 to-orange-500',
             image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=800&q=80',
@@ -105,7 +105,7 @@ export const Projects = () => {
             tags: ['React', 'Animations', 'UI/UX', 'CSS3'],
             color: 'from-fuchsia-500 to-purple-600',
             image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
-            github: 'https://github.com/dt-u/react-ui-experiments',
+            github: 'https://github.com/dt-u/animations',
             demoLink: null // Popup
         }
     ];
