@@ -36,7 +36,7 @@ export const Projects = () => {
             title: 'AI Learning Assistant',
             category: 'Full-stack Web App',
             description: 'A comprehensive LMS with role-based access (Admin, Teacher, Student) and AI-powered tutoring. Features JWT auth, Redis session management, and automated quiz generation.',
-            details: 'Deep dive: This project solves the problem of personalized learning. I utilized OpenAI API to generate quizzes based on course content. The backend handles heavy traffic with Redis caching.',
+            details: 'Deep dive: This project solves the problem of personalized learning. I utilized Gemini API to generate quizzes based on course content. The backend handles heavy traffic with Redis caching.',
             tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Docker', 'AI'],
             color: 'from-blue-500 to-indigo-600',
             image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
