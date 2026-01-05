@@ -3,12 +3,33 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import portfolioHero from '../assets/hero-portfolio.png';
 import emailSystem from '../assets/email.png';
+import es1 from '../assets/es1.png';
+import es2 from '../assets/es2.png';
+import bs1 from '../assets/bs1.png';
+import bs2 from '../assets/bs2.png';
+import bs3 from '../assets/bs3.png';
+import bs4 from '../assets/bs4.png';
+import rs1 from '../assets/rs1.png';
+import rs2 from '../assets/rs2.png';
+import rs3 from '../assets/rs3.png';
+import rs4 from '../assets/rs4.png';
+import rs5 from '../assets/rs5.png';
+import al1 from '../assets/al1.png';
+import al2 from '../assets/al2.png';
+import al3 from '../assets/al3.png';
+import al4 from '../assets/al4.png';
+import al5 from '../assets/al5.png';
+import al6 from '../assets/al6.png';
+import al7 from '../assets/al7.png';
+import al8 from '../assets/al8.png';
+import al9 from '../assets/al9.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Projects = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [selectedProject, setSelectedProject] = useState<any>(null);
+    const [previewImage, setPreviewImage] = useState<string | null>(null);
 
     const projects = [
         {
@@ -19,6 +40,7 @@ export const Projects = () => {
             tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Docker', 'AI'],
             color: 'from-blue-500 to-indigo-600',
             image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
+            gallery: [al1, al2, al3, al4, al5, al6, al7, al8, al9],
             github: 'https://github.com/dt-u/AILearningAssistant',
             demoLink: null, // Popup
             video: 'https://www.youtube.com/embed/yNKlb-jdWDE'
@@ -31,6 +53,7 @@ export const Projects = () => {
             tags: ['React', 'Bootstrap', 'RESTful API', 'Node.js'],
             color: 'from-yellow-400 to-orange-500',
             image: 'https://www.paytronix.com/hubfs/recipe%20management%20software.jpg',
+            gallery: [rs1, rs2, rs3, rs4, rs5],
             github: 'https://github.com/dt-u/recipe_app',
             demoLink: null, // Popup
             video: 'https://www.youtube.com/embed/4TJNjfRFIr4'
@@ -43,6 +66,7 @@ export const Projects = () => {
             tags: ['Java', 'Spring Boot', 'MySQL', 'Thymeleaf', 'Security'],
             color: 'from-green-500 to-emerald-600',
             image: 'https://images.squarespace-cdn.com/content/v1/5c323a92cef3725fb5279c68/1548612984866-Z3PLF1NYNYWPCJ3JP5R1/The+Book+Lady++Bookstore-0067.jpg',
+            gallery: [bs1, bs2, bs3, bs4],
             github: 'https://github.com/dt-u/se2midterm',
             demoLink: null, // Popup
             video: 'https://www.youtube.com/embed/orQKJbZJ7BA'
@@ -66,6 +90,7 @@ export const Projects = () => {
             tags: ['Node.js', 'EJS', 'MySQL', 'Backend'],
             color: 'from-orange-400 to-red-500',
             image: emailSystem,
+            gallery: [es1, es2],
             github: 'https://github.com/dt-u/email-system',
             demoLink: null, // Popup
         },
@@ -288,31 +313,57 @@ export const Projects = () => {
                                         </p>
                                     </div>
 
-                                    {/* Placeholder Gallery */}
+                                    {/* Project Gallery */}
                                     <div>
                                         <h3 className="text-xl font-bold text-white mb-4">Project Gallery</h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="rounded-xl overflow-hidden h-40 border border-white/10 group">
-                                                <img
-                                                    src={`https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&q=80`}
-                                                    alt="Project Screenshot 1"
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                />
-                                            </div>
-                                            <div className="rounded-xl overflow-hidden h-40 border border-white/10 group">
-                                                <img
-                                                    src={`https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80`}
-                                                    alt="Project Screenshot 2"
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                />
-                                            </div>
-                                            <div className="rounded-xl overflow-hidden h-40 border border-white/10 group sm:col-span-2">
-                                                <img
-                                                    src={`https://images.unsplash.com/photo-1607799275518-d58665d099db?w=800&q=80`}
-                                                    alt="Project Screenshot 3"
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                />
-                                            </div>
+                                            {selectedProject.gallery ? (
+                                                selectedProject.gallery.map((img: string, index: number) => (
+                                                    <div key={index}
+                                                        className="rounded-xl overflow-hidden h-40 border border-white/10 group cursor-pointer"
+                                                        onClick={() => setPreviewImage(img)}
+                                                    >
+                                                        <img
+                                                            src={img}
+                                                            alt={`Project Screenshot ${index + 1}`}
+                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        />
+                                                    </div>
+                                                ))
+                                            ) : (
+                                                <>
+                                                    <div
+                                                        className="rounded-xl overflow-hidden h-40 border border-white/10 group cursor-pointer"
+                                                        onClick={() => setPreviewImage(`https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&q=80`)}
+                                                    >
+                                                        <img
+                                                            src={`https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&q=80`}
+                                                            alt="Project Screenshot 1"
+                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        />
+                                                    </div>
+                                                    <div
+                                                        className="rounded-xl overflow-hidden h-40 border border-white/10 group cursor-pointer"
+                                                        onClick={() => setPreviewImage(`https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80`)}
+                                                    >
+                                                        <img
+                                                            src={`https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80`}
+                                                            alt="Project Screenshot 2"
+                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        />
+                                                    </div>
+                                                    <div
+                                                        className="rounded-xl overflow-hidden h-40 border border-white/10 group sm:col-span-2 cursor-pointer"
+                                                        onClick={() => setPreviewImage(`https://images.unsplash.com/photo-1607799275518-d58665d099db?w=800&q=80`)}
+                                                    >
+                                                        <img
+                                                            src={`https://images.unsplash.com/photo-1607799275518-d58665d099db?w=800&q=80`}
+                                                            alt="Project Screenshot 3"
+                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        />
+                                                    </div>
+                                                </>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -345,6 +396,27 @@ export const Projects = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            )}
+
+            {/* LIGHTBOX MODAL */}
+            {previewImage && (
+                <div
+                    className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+                    onClick={() => setPreviewImage(null)}
+                >
+                    <button
+                        onClick={() => setPreviewImage(null)}
+                        className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-white/20 text-white transition-colors border border-white/20"
+                    >
+                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                    <img
+                        src={previewImage}
+                        alt="Zoomed Preview"
+                        className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                    />
                 </div>
             )}
         </section>
