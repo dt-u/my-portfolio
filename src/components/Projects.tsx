@@ -42,7 +42,7 @@ export const Projects = () => {
             outcome: 'Achieved an A+ grade, receiving high praise from instructors for system completeness and innovation.',
             tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Docker', 'AI'],
             color: 'from-blue-500 to-indigo-600',
-            image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
+            image: 'https://cdn.tokyotechlab.com/Blog/Blog%202024/Blog%20T10/e_learning_la_gi_306d10ac71.webp',
             gallery: [al1, al2, al3, al4, al5, al6, al7, al8, al9],
             github: 'https://github.com/dt-u/AILearningAssistant',
             demoLink: null, // Popup
