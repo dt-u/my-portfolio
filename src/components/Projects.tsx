@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import portfolioHero from '../assets/hero-portfolio.png';
+import emailSystem from '../assets/email.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,18 +20,32 @@ export const Projects = () => {
             color: 'from-blue-500 to-indigo-600',
             image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
             github: 'https://github.com/dt-u/AILearningAssistant',
-            demoLink: null // Popup
+            demoLink: null, // Popup
+            video: 'https://www.youtube.com/embed/yNKlb-jdWDE'
         },
         {
-            title: 'Spring Boot Enterprise App',
+            title: 'Recipe Management App',
+            category: 'Interactive UI',
+            description: 'Interactive recipe discovery platform. Developed a custom RESTful API to manage and serve recipe data asynchronously to the frontend.',
+            details: 'Designed and implemented a custom backend API using Node.js and Express to handle CRUD operations for recipes, user authentication, and social features. The frontend interacts seamlessly with this bespoke server to provide a real-time discovery experience.',
+            tags: ['React', 'Bootstrap', 'RESTful API', 'Node.js'],
+            color: 'from-yellow-400 to-orange-500',
+            image: 'https://www.paytronix.com/hubfs/recipe%20management%20software.jpg',
+            github: 'https://github.com/dt-u/recipe_app',
+            demoLink: null, // Popup
+            video: 'https://www.youtube.com/embed/4TJNjfRFIr4'
+        },
+        {
+            title: 'Book Store Management',
             category: 'Backend Architecture',
             description: 'Secure web application using Spring Boot and Spring Data JPA. Implemented Spring Security for auth and Thymeleaf for server-side rendering.',
-            details: 'Focused on security and scalability. Implemented role-based access control (RBAC) and complex database relationships using Hibernate.',
+            details: 'Focused on security and scalability. Implemented role-based access control (RBAC) and complex database relationships using Hibernate to manage books, categories, and orders.',
             tags: ['Java', 'Spring Boot', 'MySQL', 'Thymeleaf', 'Security'],
             color: 'from-green-500 to-emerald-600',
-            image: 'https://images.unsplash.com/photo-1623479322729-28b25c16b011?w=800&q=80',
+            image: 'https://images.squarespace-cdn.com/content/v1/5c323a92cef3725fb5279c68/1548612984866-Z3PLF1NYNYWPCJ3JP5R1/The+Book+Lady++Bookstore-0067.jpg',
             github: 'https://github.com/dt-u/se2midterm',
-            demoLink: null // Popup
+            demoLink: null, // Popup
+            video: 'https://www.youtube.com/embed/orQKJbZJ7BA'
         },
         {
             title: 'Personal Portfolio',
@@ -38,7 +54,7 @@ export const Projects = () => {
             details: 'Built with performance in mind. Uses GSAP for smooth animations without layout thrashing. Fully responsive and accessible.',
             tags: ['React', 'TypeScript', 'Tailwind', 'Vite'],
             color: 'from-violet-500 to-purple-600',
-            image: 'https://images.unsplash.com/photo-1545665277-5937bf0449ec?w=800&q=80',
+            image: portfolioHero,
             github: 'https://github.com/dt-u/my-portfolio',
             demoLink: 'https://my-portfolio-five-kappa-4lr6s8l5ge.vercel.app/' // Link to Web
         },
@@ -49,20 +65,9 @@ export const Projects = () => {
             details: 'Simulates a real SMTP server environment. Handles multipart form data for attachments and stores email states in MySQL.',
             tags: ['Node.js', 'EJS', 'MySQL', 'Backend'],
             color: 'from-orange-400 to-red-500',
-            image: 'https://images.unsplash.com/photo-1557200130-4b2251506711?w=800&q=80',
+            image: emailSystem,
             github: 'https://github.com/dt-u/email-system',
-            demoLink: null // Popup
-        },
-        {
-            title: 'Recipe Management App',
-            category: 'Interactive UI',
-            description: 'Interactive recipe discovery platform. Developed a custom RESTful API to manage and serve recipe data asynchronously to the frontend.',
-            details: 'Designed and implemented a custom backend API using Node.js and Express to handle CRUD operations for recipes, user authentication, and social features. The frontend interacts seamlessly with this bespoke server to provide a real-time discovery experience.',
-            tags: ['React', 'Bootstrap', 'RESTful API', 'Node.js'],
-            color: 'from-yellow-400 to-orange-500',
-            image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=800&q=80',
-            github: 'https://github.com/dt-u/recipe_app',
-            demoLink: null // Popup
+            demoLink: null, // Popup
         },
         {
             title: 'Weather Dashboard',
@@ -87,17 +92,6 @@ export const Projects = () => {
             demoLink: 'https://web-xanh.vercel.app/'
         },
         {
-            title: 'Cam Trà Nhà Tớ',
-            category: 'E-commerce (Collaborator)',
-            description: 'Customized WordPress/WooCommerce theme for a retail brand. Optimized images and scripts for better page load speed and SEO.',
-            details: 'Collaborated with a team to customize PHP templates in WordPress. Managed WooCommerce product variations and shipping classes.',
-            tags: ['WordPress', 'WooCommerce', 'CSS', 'HTML'],
-            color: 'from-pink-400 to-rose-500',
-            image: 'https://images.unsplash.com/photo-1472851294608-415522f96319?w=800&q=80',
-            github: 'https://github.com/dt-u/cam-tra-nha-to',
-            demoLink: null // Popup
-        },
-        {
             title: 'React UI Experiments',
             category: 'Self-Study',
             description: 'Collection of high-performance UI components like Splash Cursor, Magic Bento Grid, and Falling Text using pure CSS3 and React Hooks.',
@@ -106,7 +100,7 @@ export const Projects = () => {
             color: 'from-fuchsia-500 to-purple-600',
             image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
             github: 'https://github.com/dt-u/animations',
-            demoLink: null // Popup
+            demoLink: 'https://animations-three-rosy.vercel.app/'
         }
     ];
 
@@ -233,27 +227,50 @@ export const Projects = () => {
                     <div className="relative bg-[#151c2f] border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl z-50 animate-fade-in-up">
                         <button
                             onClick={() => setSelectedProject(null)}
-                            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-50"
+                            className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-colors z-50 border border-white/20"
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
 
-                        <div className="h-64 md:h-80 w-full relative overflow-hidden">
-                            <div className={`absolute inset-0 bg-gradient-to-br ${selectedProject.color} opacity-40`}></div>
-                            <img
-                                src={selectedProject.image}
-                                alt={selectedProject.title}
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#151c2f] to-transparent">
-                                <span className="px-3 py-1 bg-indigo-600 rounded-full text-xs font-bold text-white uppercase tracking-wider mb-2 inline-block">
-                                    {selectedProject.category}
-                                </span>
-                                <h2 className="text-4xl md:text-5xl font-bold text-white shadow-black drop-shadow-lg">
+                        <div className="h-64 md:h-96 w-full relative overflow-hidden bg-black">
+                            {selectedProject.video ? (
+                                <iframe
+                                    src={selectedProject.video}
+                                    title={selectedProject.title}
+                                    className="w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            ) : (
+                                <>
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${selectedProject.color} opacity-40`}></div>
+                                    <img
+                                        src={selectedProject.image}
+                                        alt={selectedProject.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#151c2f] to-transparent">
+                                        <span className="px-3 py-1 bg-indigo-600 rounded-full text-xs font-bold text-white uppercase tracking-wider mb-2 inline-block">
+                                            {selectedProject.category}
+                                        </span>
+                                        <h2 className="text-4xl md:text-5xl font-bold text-white shadow-black drop-shadow-lg">
+                                            {selectedProject.title}
+                                        </h2>
+                                    </div>
+                                </>
+                            )}
+                        </div>
+
+                        {selectedProject.video && (
+                            <div className="px-8 pt-6 pb-0">
+                                <h2 className="text-3xl md:text-4xl font-bold text-white">
                                     {selectedProject.title}
                                 </h2>
+                                <span className="mt-2 inline-block px-3 py-1 bg-indigo-600 rounded-full text-xs font-bold text-white uppercase tracking-wider">
+                                    {selectedProject.category}
+                                </span>
                             </div>
-                        </div>
+                        )}
 
                         <div className="p-8 md:p-10">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

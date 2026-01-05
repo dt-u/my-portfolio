@@ -6,7 +6,6 @@ import './App.css';
 // Components
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { PersonalInfo } from './components/PersonalInfo';
 import { About } from './components/About';
 import { Education } from './components/Education';
 import { Skills } from './components/Skills';
@@ -53,7 +52,6 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <PersonalInfo />
         <About />
         <Education />
         <Skills />

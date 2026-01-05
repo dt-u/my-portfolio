@@ -24,7 +24,7 @@ export const Hero = () => {
     }, [textIndex]);
 
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0f172a]">
+        <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden bg-[#0f172a]">
             {/* Dynamic Background */}
             <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/30 rounded-full blur-[120px] animate-blob"></div>
@@ -36,26 +36,26 @@ export const Hero = () => {
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
             </div>
 
-            <div className="container mx-auto px-6 z-10 relative">
+            <div className="container mx-auto px-6 z-10 relative pt-16">
                 <div className="flex flex-col items-center text-center">
-                    <div className="inline-block px-4 py-2 mb-6 rounded-full border border-indigo-500/30 bg-indigo-500/10 backdrop-blur-md animate-fade-in-down">
+                    <div className="inline-block px-4 py-2 mb-4 rounded-full border border-indigo-500/30 bg-indigo-500/10 backdrop-blur-md animate-fade-in-down">
                         <span className="text-indigo-300 font-medium tracking-wide text-sm uppercase">Open to Internship Opportunities</span>
                     </div>
 
-                    <h1 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tight leading-tight">
+                    <h1 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tight leading-tight">
                         Hi, I'm <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-x bg-[length:200%_auto]">
                             Dam Tu Uyen
                         </span>
                     </h1>
 
-                    <div className="h-12 md:h-16 mb-8 overflow-hidden">
+                    <div className="h-12 md:h-16 mb-6 overflow-hidden">
                         <span ref={textRef} className="block text-2xl md:text-4xl text-gray-400 font-light">
                             {roles[textIndex]}
                         </span>
                     </div>
 
-                    <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
                         Final-year IT student at <strong className="text-indigo-400">Hanoi University (HANU)</strong>. 
                         Passionate about creating interactive, user-centric interfaces and solid backend systems.
                     </p>
@@ -78,7 +78,7 @@ export const Hero = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+            <div className="absolute bottom-10 right-10 animate-bounce z-20 hidden md:flex">
                 <div className="w-[30px] h-[50px] rounded-full border-2 border-white/30 flex justify-center p-2">
                     <div className="w-1 h-3 bg-white/50 rounded-full animate-scroll-down"></div>
                 </div>
