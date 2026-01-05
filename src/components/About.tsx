@@ -37,10 +37,6 @@ export const About = () => {
                                 <span className="text-sm font-medium text-gray-300">Problem Solver</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse delay-200"></div>
-                                <span className="text-sm font-medium text-gray-300">Team Player</span>
-                            </div>
-                            <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse delay-300"></div>
                                 <span className="text-sm font-medium text-gray-300">Creative Thinker</span>
                             </div>

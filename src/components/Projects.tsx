@@ -35,8 +35,11 @@ export const Projects = () => {
         {
             title: 'AI Learning Assistant',
             category: 'Full-stack Web App',
+            teamSize: 'Team of 5',
             description: 'A comprehensive LMS with role-based access (Admin, Teacher, Student) and AI-powered tutoring. Features JWT auth, Redis session management, and automated quiz generation.',
             details: 'Deep dive: This project solves the problem of personalized learning. I utilized Gemini API to generate quizzes based on course content. The backend handles heavy traffic with Redis caching.',
+            keyResponsibilities: 'Designed the overall system UI/UX, including dedicated interfaces for quiz taking and flashcard review. Architected the database schema and developed backend services for real-time messaging, AI Tutor integration, announcement systems, and quiz attempt tracking.',
+            outcome: 'Achieved an A+ grade, receiving high praise from instructors for system completeness and innovation.',
             tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Docker', 'AI'],
             color: 'from-blue-500 to-indigo-600',
             image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
@@ -47,9 +50,11 @@ export const Projects = () => {
         },
         {
             title: 'Recipe Management App',
-            category: 'Interactive UI',
+            category: 'Full-stack Web App',
+            teamSize: 'Team of 3',
             description: 'Interactive recipe discovery platform. Developed a custom RESTful API to manage and serve recipe data asynchronously to the frontend.',
             details: 'Designed and implemented a custom backend API using Node.js and Express to handle CRUD operations for recipes, user authentication, and social features. The frontend interacts seamlessly with this bespoke server to provide a real-time discovery experience.',
+            keyResponsibilities: 'Engineered the complete authentication system (registration, login, password recovery/reset) and role-based access control. Developed the user profile management features and CRUD functionality for reporting. Built the entire frontend and backend logic for the Administration dashboard.',
             tags: ['React', 'Bootstrap', 'RESTful API', 'Node.js'],
             color: 'from-yellow-400 to-orange-500',
             image: 'https://www.paytronix.com/hubfs/recipe%20management%20software.jpg',
@@ -60,9 +65,11 @@ export const Projects = () => {
         },
         {
             title: 'Book Store Management',
-            category: 'Backend Architecture',
+            category: 'Full-stack Web App',
+            teamSize: 'Team of 6',
             description: 'Secure web application using Spring Boot and Spring Data JPA. Implemented Spring Security for auth and Thymeleaf for server-side rendering.',
             details: 'Focused on security and scalability. Implemented role-based access control (RBAC) and complex database relationships using Hibernate to manage books, categories, and orders.',
+            keyResponsibilities: 'Created high-fidelity Figma designs and developed comprehensive HTML frontend templates. Refactored and extended backend functionality to ensure system stability and feature completeness.',
             tags: ['Java', 'Spring Boot', 'MySQL', 'Thymeleaf', 'Security'],
             color: 'from-green-500 to-emerald-600',
             image: 'https://images.squarespace-cdn.com/content/v1/5c323a92cef3725fb5279c68/1548612984866-Z3PLF1NYNYWPCJ3JP5R1/The+Book+Lady++Bookstore-0067.jpg',
@@ -74,6 +81,7 @@ export const Projects = () => {
         {
             title: 'Personal Portfolio',
             category: 'Design & Dev',
+            teamSize: 'Solo Project',
             description: 'Modern, high-performance portfolio website to showcase technical skills. Optimized build performance using Vite and implemented Tailwind CSS for responsive UI.',
             details: 'Built with performance in mind. Uses GSAP for smooth animations without layout thrashing. Fully responsive and accessible.',
             tags: ['React', 'TypeScript', 'Tailwind', 'Vite'],
@@ -85,8 +93,10 @@ export const Projects = () => {
         {
             title: 'Internal Email Simulation',
             category: 'Backend Logic',
+            teamSize: 'Solo Project',
             description: 'Functional web-based email client simulation. Handled file uploads, attachment processing, and implemented server-side rendering using EJS.',
             details: 'Simulates a real SMTP server environment. Handles multipart form data for attachments and stores email states in MySQL.',
+            outcome: 'Earned an A grade for successfully simulating complex SMTP server logic and data handling.',
             tags: ['Node.js', 'EJS', 'MySQL', 'Backend'],
             color: 'from-orange-400 to-red-500',
             image: emailSystem,
@@ -97,8 +107,10 @@ export const Projects = () => {
         {
             title: 'Weather Dashboard',
             category: 'Data Visualization',
+            teamSize: 'Solo Project',
             description: 'Real-time weather application using Leaflet Maps to visualize weather patterns and location data geographically.',
             details: 'Integrates OpenWeatherMap API with Leaflet.js. Challenges involved handling asynchronous data updates on the map overlay.',
+            outcome: 'Secured an A grade, demonstrating effective usage of third-party APIs and dynamic data visualization.',
             tags: ['React', 'Leaflet', 'Bootstrap', 'API'],
             color: 'from-cyan-400 to-blue-500',
             image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80',
@@ -108,8 +120,10 @@ export const Projects = () => {
         {
             title: 'Environmental Awareness',
             category: 'Static Web Design',
+            teamSize: 'Solo Project',
             description: 'Designed "Green Web", an educational website featuring news, donation, and shopping sections with responsive layout.',
             details: 'A focus on semantic HTML5 and CSS3 Grid/Flexbox layouts. Optimized for all device sizes without frameworks.',
+            outcome: 'Achieved an A+ grade for exceptional design and adherence to semantic web standards.',
             tags: ['HTML5', 'CSS3', 'Responsive Design'],
             color: 'from-lime-400 to-green-500',
             image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80',
@@ -119,6 +133,7 @@ export const Projects = () => {
         {
             title: 'React UI Experiments',
             category: 'Self-Study',
+            teamSize: 'Solo Project',
             description: 'Collection of high-performance UI components like Splash Cursor, Magic Bento Grid, and Falling Text using pure CSS3 and React Hooks.',
             details: 'A playground for advanced React patterns and math-heavy CSS animations. Features custom hooks for mouse tracking and physics simulations.',
             tags: ['React', 'Animations', 'UI/UX', 'CSS3'],
@@ -279,7 +294,7 @@ export const Projects = () => {
                                             {selectedProject.category}
                                         </span>
                                         <h2 className="text-4xl md:text-5xl font-bold text-white shadow-black drop-shadow-lg">
-                                            {selectedProject.title}
+                                            {selectedProject.title} <span className="text-2xl font-normal opacity-80">({selectedProject.teamSize})</span>
                                         </h2>
                                     </div>
                                 </>
@@ -289,7 +304,7 @@ export const Projects = () => {
                         {selectedProject.video && (
                             <div className="px-8 pt-6 pb-0">
                                 <h2 className="text-3xl md:text-4xl font-bold text-white">
-                                    {selectedProject.title}
+                                    {selectedProject.title} <span className="text-xl font-normal opacity-60">({selectedProject.teamSize})</span>
                                 </h2>
                                 <span className="mt-2 inline-block px-3 py-1 bg-indigo-600 rounded-full text-xs font-bold text-white uppercase tracking-wider">
                                     {selectedProject.category}
@@ -308,9 +323,27 @@ export const Projects = () => {
                                     </div>
                                     <div>
                                         <h3 className="text-xl font-bold text-white mb-3">Technical Details</h3>
-                                        <p className="text-gray-300 leading-relaxed">
+                                        <p className="text-gray-300 leading-relaxed mb-6">
                                             {selectedProject.details || "More detailed technical specifications and challenges overcome during this project will be updated here. This section allows for a deeper dive into the architecture and code structure."}
                                         </p>
+
+                                        {selectedProject.keyResponsibilities && (
+                                            <div className="mb-6">
+                                                <h4 className="text-lg font-bold text-indigo-300 mb-2">Key Responsibilities</h4>
+                                                <p className="text-gray-300 leading-relaxed">
+                                                    {selectedProject.keyResponsibilities}
+                                                </p>
+                                            </div>
+                                        )}
+
+                                        {selectedProject.outcome && (
+                                            <div className="mb-6">
+                                                <h4 className="text-lg font-bold text-green-400 mb-2">Outcome</h4>
+                                                <p className="text-gray-300 leading-relaxed">
+                                                    {selectedProject.outcome}
+                                                </p>
+                                            </div>
+                                        )}
                                     </div>
 
                                     {/* Project Gallery */}

@@ -13,7 +13,7 @@ export const Skills = () => {
         {
             title: "Backend & DB",
             icon: "⚙️",
-            skills: ["Node.js", "Express.js", "Spring Boot", "Java", "PHP", "MySQL", "MongoDB"]
+            skills: ["Node.js", "Express.js", "Spring Boot", "Java", "MySQL", "MongoDB"]
         },
         {
             title: "Tools & Others",
@@ -24,7 +24,7 @@ export const Skills = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo(".skill-card", 
+            gsap.fromTo(".skill-card",
                 { y: 50, opacity: 0 },
                 {
                     y: 0,
@@ -46,8 +46,8 @@ export const Skills = () => {
 
     return (
         <section id="skills" className="py-32 bg-[#0b1121] relative overflow-hidden">
-             {/* Background Decoration */}
-             <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-indigo-900/10 to-transparent pointer-events-none"></div>
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-indigo-900/10 to-transparent pointer-events-none"></div>
 
             <div className="container mx-auto px-6 relative z-10" ref={containerRef}>
                 <div className="text-center mb-20">
@@ -61,7 +61,7 @@ export const Skills = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {categories.map((category, idx) => (
-                        <div 
+                        <div
                             key={idx}
                             className="skill-card group relative p-1 rounded-2xl bg-gradient-to-b from-white/10 to-white/5 hover:from-indigo-500/50 hover:to-purple-500/50 transition-all duration-500"
                         >
@@ -69,17 +69,17 @@ export const Skills = () => {
                                 <div className="absolute top-0 right-0 p-4 opacity-10 text-8xl group-hover:scale-150 group-hover:rotate-12 transition-transform duration-700 select-none">
                                     {category.icon}
                                 </div>
-                                
+
                                 <div className="relative z-10">
                                     <div className="w-16 h-16 rounded-lg bg-indigo-500/20 flex items-center justify-center text-3xl mb-6 backdrop-blur-sm border border-indigo-500/30 group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">
                                         {category.icon}
                                     </div>
-                                    
+
                                     <h3 className="text-2xl font-bold text-white mb-6">{category.title}</h3>
-                                    
+
                                     <div className="flex flex-wrap gap-3">
                                         {category.skills.map((skill, sIdx) => (
-                                            <span 
+                                            <span
                                                 key={sIdx}
                                                 className="px-3 py-1.5 text-sm font-medium text-gray-300 bg-white/5 border border-white/10 rounded-md group-hover:border-white/20 group-hover:text-white transition-colors"
                                             >

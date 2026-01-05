@@ -9,7 +9,7 @@ export const Education = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo(".bento-item", 
+            gsap.fromTo(".bento-item",
                 { y: 50, opacity: 0 },
                 {
                     y: 0,
@@ -31,9 +31,9 @@ export const Education = () => {
 
     return (
         <section id="education" className="py-20 bg-[#0b1121] relative overflow-hidden">
-             {/* Background Decoration */}
-             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none"></div>
-             <div className="absolute top-1/4 left-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            {/* Background Decoration */}
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none"></div>
+            <div className="absolute top-1/4 left-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="container mx-auto px-6 relative z-10" ref={containerRef}>
                 <div className="text-center mb-16">
@@ -44,14 +44,14 @@ export const Education = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-6xl mx-auto">
-                    
+
                     {/* Main University Card - Span 8 */}
                     <div className="bento-item md:col-span-8 bg-[#151c2f] border border-white/5 rounded-3xl p-8 md:p-10 relative overflow-hidden group hover:border-indigo-500/30 transition-all duration-500">
                         <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                            <svg className="w-40 h-40 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                            <svg className="w-40 h-40 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" /></svg>
                         </div>
                         <div className="relative z-10">
-                            <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-bold rounded-full border border-indigo-500/30 uppercase tracking-wider">Bachelor's Degree</span>
+                            <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-bold rounded-full border border-indigo-500/30 uppercase tracking-wider">University</span>
                             <h3 className="text-3xl font-bold text-white mt-4 mb-2">Hanoi University (HANU)</h3>
                             <p className="text-xl text-gray-400 mb-6">Major in Information Technology</p>
                             <div className="flex flex-wrap gap-2">
@@ -71,13 +71,13 @@ export const Education = () => {
 
                     {/* Scholarships Card - Span 7 */}
                     <div className="bento-item md:col-span-7 bg-[#151c2f] border border-white/5 rounded-3xl p-8 relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-500">
-                         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-500/10 rounded-full blur-3xl group-hover:bg-yellow-500/20 transition-all"></div>
-                        
+                        <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-500/10 rounded-full blur-3xl group-hover:bg-yellow-500/20 transition-all"></div>
+
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center text-2xl text-yellow-400">🏆</div>
                             <h3 className="text-xl font-bold text-white">Honors & Awards</h3>
                         </div>
-                        
+
                         <div className="space-y-4">
                             <div className="flex items-start gap-3">
                                 <div className="mt-1.5 w-2 h-2 rounded-full bg-yellow-500"></div>
@@ -86,7 +86,7 @@ export const Education = () => {
                                     <p className="text-sm text-gray-400">Semester I, II, III (2022 - 2023)</p>
                                 </div>
                             </div>
-                             <div className="flex items-start gap-3">
+                            <div className="flex items-start gap-3">
                                 <div className="mt-1.5 w-2 h-2 rounded-full bg-yellow-500"></div>
                                 <div>
                                     <h4 className="text-white font-medium">Academic Scholarship</h4>
@@ -106,7 +106,7 @@ export const Education = () => {
                     {/* Coursework Card - Span 5 */}
                     <div className="bento-item md:col-span-5 bg-[#151c2f] border border-white/5 rounded-3xl p-8 relative overflow-hidden group hover:border-emerald-500/30 transition-all duration-500">
                         <div className="absolute -right-10 -top-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all"></div>
-                        
+
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-2xl text-emerald-400">📚</div>
                             <h3 className="text-xl font-bold text-white">Key Coursework</h3>
