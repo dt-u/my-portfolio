@@ -74,7 +74,7 @@ export const Projects = () => {
             color: 'from-green-500 to-emerald-600',
             image: 'https://images.squarespace-cdn.com/content/v1/5c323a92cef3725fb5279c68/1548612984866-Z3PLF1NYNYWPCJ3JP5R1/The+Book+Lady++Bookstore-0067.jpg',
             gallery: [bs1, bs2, bs3, bs4],
-            github: 'https://github.com/dt-u/se2midterm',
+            github: 'https://github.com/dt-u/bookstmn_',
             demoLink: null, // Popup
             video: 'https://www.youtube.com/embed/orQKJbZJ7BA'
         },
