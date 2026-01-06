@@ -62,7 +62,7 @@ export const SoftSkills = () => {
             <div className="container mx-auto px-6" ref={sectionRef}>
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-white">Soft Skills & Values</h2>
-                    <p className="text-gray-400 mt-2">Personal attributes that drive my professional success</p>
+                    <p className="text-gray-400 mt-2">Core values that guide my learning and development</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
